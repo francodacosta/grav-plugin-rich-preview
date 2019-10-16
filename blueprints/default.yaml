@@ -1,0 +1,28 @@
+title: Gallery
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        options:
+          fields:
+              Rich-Preview:
+                type: section
+                title: Rich Preview
+                underline: true
+
+                fields:
+                    header.rich_preview_description:
+                      type: text
+                      label: Page description
+                      help: can be left bank, if so it will use the metadata description field of try to get it from the page content
+                    header.rich_preview_thumbnail:
+                      type: text
+                      label: Page Thumbnail
+                      help: image url or page media image order number, if left bank it will use first image in page media

@@ -1,0 +1,27 @@
+name: Rich Preview
+version: 0.1.0
+description: Sets thumbnail and description so wyou can control how a linke to your website looks like when shared, for example in whatsapp
+icon: plug
+author:
+  name: Nuno Costa
+  email: info@codehaha.com
+homepage: https://github.com/francodacosta/grav-plugin-rich-preview
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/francodacosta/grav-plugin-rich-preview/issues
+docs: https://github.com/francodacosta/grav-plugin-rich-preview/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
