@@ -1,4 +1,6 @@
 en:
   PLUGIN_RICH_PREVIEW:
-    TEXT_VARIABLE: Text Variable
-    TEXT_VARIABLE_HELP: Text to add to the top of a page
+    DESC_LABEL: Page description
+    DESC_HELP: can be left bank, if so it will use the metadata description field of try to get it from the page content
+    THUMB_LABEL: Page thumbnail
+    THUMB_HELP: image url or page media image order number, if left bank it will use first image in page media

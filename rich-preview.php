@@ -10,7 +10,16 @@ use RocketTheme\Toolbox\Event\Event;
  */
 class RichPreviewPlugin extends Plugin
 {
+    /**
+     * @var string
+     */
     const META_DESCRIPTION = 'description';
+
+    /**
+     * @var string
+     */
+    const META_THUMB = 'thumbnail';
+
     /**
      * @return array
      *
@@ -41,7 +50,7 @@ class RichPreviewPlugin extends Plugin
         }
 
         $this->enable([
-            'onPageInitialized'    => ['onPageInitialized', 0],
+            'onPageInitialized' => ['onPageInitialized', 0],
         ]);
     }
 
@@ -54,6 +63,9 @@ class RichPreviewPlugin extends Plugin
        $types->scanBlueprints('plugin://' . $this->name . '/blueprints');
    }
 
+   /**
+    * On Page Initialized Event
+    */
    public function onPageInitialized()
    {
        $page = $this->grav['page'];
@@ -65,27 +77,29 @@ class RichPreviewPlugin extends Plugin
            $description = $this->computeDescription($page->content(null), $metadata);
        }
 
-       $metadata['description']['name'] = 'description';
-       $metadata['description']['content'] = $description;
+       $metadata[self::META_DESCRIPTION]['name'] = self::META_DESCRIPTION;
+       $metadata[self::META_DESCRIPTION]['content'] = $description;
 
        $thumbnail = $page->header()->rich_preview_thumbnail;
-
-       if ('' !== $thumbnail) {
-           $thumbnail = 0;
-       }
        if ( (int) $thumbnail >= 0 ) {
-           // var_dump(array_values($page->media()->images())[$thumbnail]->url());
-           // die;
-           $thumbnail = array_values($page->media()->images())[$thumbnail]->url();
+           $thumbnail = array_values($page->media()->images())[(int)$thumbnail]->url();
        }
 
-       $metadata['thumbnail']['name'] = 'thumbnail';
-       $metadata['thumbnail']['content'] = $thumbnail;
+       $metadata[self::META_THUMB]['name'] = self::META_THUMB;
+       $metadata[self::META_THUMB]['content'] = $thumbnail;
 
        $page->metadata($metadata);
    }
 
-   private function computeDescription(string $pageContent, array $metadata)
+   /**
+    * Computes page description
+    *
+    * @param  string $pageContent
+    * @param  array  $metadata
+    *
+    * @return string
+    */
+   private function computeDescription(string $pageContent, array $metadata): string
    {
        if (array_key_exists(self::META_DESCRIPTION, $metadata)) {
            return $metadata[self::META_DESCRIPTION]['content'];
@@ -95,7 +109,15 @@ class RichPreviewPlugin extends Plugin
 
    }
 
-   private function sanitizeText(string $text)
+   /**
+    * cleans up text by removing html tags, scripts markdown, twig, etc
+    * taken from https://github.com/paulmassen/grav-plugin-seo/blob/master/seo.php
+    *
+    * @param  string $text
+    *
+    * @return string
+    */
+   private function sanitizeText(string $text): string
    {
          $text=strip_tags($text);
          $rules = array (

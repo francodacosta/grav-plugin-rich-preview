@@ -2,4 +2,4 @@
 ##  10/16/2019
 
 1. [](#new)
-    * ChangeLog started...
+    * initial functionality
