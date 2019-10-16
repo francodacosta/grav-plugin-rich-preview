@@ -1,8 +1,6 @@
 # Rich Preview Plugin
 
-**This README.md file should be modified to describe the features, installation, configuration, and general usage of the plugin.**
-
-The **Rich Preview** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Sets thumbnail and description so wyou can control how a linke to your website looks like when shared, for example in whatsapp
+The **Rich Preview** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Sets thumbnail and description so you can control how a link to your website looks like when shared, for example in whatsApp
 
 ## Installation
 
@@ -23,8 +21,6 @@ To install the plugin manually, download the zip-version of this repository and 
 You should now have all the plugin files under
 
     /your/site/grav/user/plugins/rich-preview
-	
-> NOTE: This plugin is a modular component for Grav which may require other plugins to operate, please see its [blueprints.yaml-file on GitHub](https://github.com/francodacosta/grav-plugin-rich-preview/blob/master/blueprints.yaml).
 
 ### Admin Plugin
 
@@ -44,13 +40,12 @@ Note that if you use the Admin Plugin, a file with your configuration named rich
 
 ## Usage
 
-**Describe how to use the plugin.**
+You will have two new fields on the *options* tab of *Edit/Add Page*.
 
-## Credits
+Those will allow you to set a description and thumbnail for the page.
 
-**Did you incorporate third-party code? Want to thank somebody?**
+If not description is provided, the global description is used if none is set we try to compute one from the page content.
 
-## To Do
+By default the plugin will use the first image in page media for thumbnail.
 
-- [ ] Future plans, if any
-
+To change it you can either provide an URL or an index number of the page media you want to use (start counting at 0)
