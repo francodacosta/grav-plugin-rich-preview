@@ -6,8 +6,8 @@ author:
   name: Nuno Costa
   email: info@codehaha.com
 homepage: https://github.com/francodacosta/grav-plugin-rich-preview
-demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
+demo: http://www.francodacosta.com
+keywords: grav, plugin, grav-admin, seo, rich preview
 bugs: https://github.com/francodacosta/grav-plugin-rich-preview/issues
 docs: https://github.com/francodacosta/grav-plugin-rich-preview/blob/develop/README.md
 license: MIT
