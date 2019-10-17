@@ -40,7 +40,7 @@ Note that if you use the Admin Plugin, a file with your configuration named rich
 
 ## Usage
 
-You will have two new fields on the *options* tab of *Edit/Add Page*.
+You will have two new fields on the *options* tab of *Edit/Add Page* of *Grav Admin Plugin*.
 
 Those will allow you to set a description and thumbnail for the page.
 
