@@ -1,3 +1,10 @@
+# v0.1.2
+##  11/12/2019
+
+1. [](#new)
+    * fix crash when page has no media
+    
+    
 # v0.1.1
 ##  10/17/2019
 
