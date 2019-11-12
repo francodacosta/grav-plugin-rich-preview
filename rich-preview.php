@@ -81,7 +81,7 @@ class RichPreviewPlugin extends Plugin
        $metadata[self::META_DESCRIPTION]['content'] = $description;
 
        $thumbnail = $page->header()->rich_preview_thumbnail;
-       if ( (int) $thumbnail >= 0 ) {
+       if ( (int) $thumbnail > 0 ) {
            $thumbnail = array_values($page->media()->images())[(int)$thumbnail]->url();
        }
 
